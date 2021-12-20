@@ -17,4 +17,19 @@ def home(request):
     return render(request,'main/index.html')
 
 def about(request):
-    return render(request,'main/about.html')    
+    return render(request,'main/about.html')   
+
+def contact(request):
+    return render(request,'main/contact.html')
+
+def blog(request):
+    return render(request,'main/blog.html')
+
+def services(request):
+    return render(request,'main/services.html')
+
+def gallery(request):
+    return render(request,'main/gallery.html')
+
+def typo(request):
+    return render(request,'main/typo.html')
