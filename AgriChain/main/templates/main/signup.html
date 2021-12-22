@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../../static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../../static/css/signin.css" rel="stylesheet">
+    </head>
+    <body class="text-center">
+      <main class="form-signin">
+        <div class="jumbotron text-black rounded" style="background-color: white;">
+        <h1 id='title1'>Agro Tech Chain</h1>
+        <form>
+          <img class="mb-4" src="../../static/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+          <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingName" placeholder="text">
+            <label for="floatingName" id="name-id">Name</label>
+          </div>
+
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput" id="email-id">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword" id="password-id">Password</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingAddress" placeholder="text">
+            <label for="floatingAddress" id="address-id">Wallet Address</label>
+          </div>
+          <br>
+          <div class="form-float">
+            <select class="form-select">
+                <option selected>Login as ...</option>
+                <option value="1">Farmer</option>
+                <option value="2">Processor</option>
+                <option value="3">Logistics</option>
+                <option value="4">Quality Checker</option>
+                <option value="5">Retailer</option>
+                <option value="6">Investor</option>
+                <option value="7">Customer</option>
+            </select>
+          </div>
+          <br>
+
+          <button class="w-50 btn btn-lg btn-primary" type="submit">Sign in</button>
+          <br><br>
+        </form>
+        </div>
+      </main>
+
+    
+  </body>
+</html>
