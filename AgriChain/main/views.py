@@ -12,8 +12,11 @@ from pyqrcode import QRCode
 
 
 # Create your views here.
+def signup(request):
+    return render(request,'main/signup.html')
+
 def login(request):
-    return render(request,'main/signin.html')
+    return render(request,'main/signin.html')    
 
 def home(request):
     return render(request,'main/index.html')

@@ -65,8 +65,11 @@
             </select>
           </div>
           <br>
-          <button class="w-50 btn btn-lg btn-primary" type="submit">Sign in</button>
+          <a href="{% url 'home' %}" ><button class="w-50 btn btn-lg btn-primary" type="submit">Log In</button></a>
           <br><br>
+          <b>Don't have an account yet? Click here</b>
+          <a href="{% url 'signup' %}" style="color:blue"><h5>SignUp</h5></a>
+          <br>
         </form>
         </div>
       </main>
