@@ -1,0 +1,83 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url('../assets/brand/agri-banner.jpg');
+  background-repeat: no-repeat;
+  max-height:fit-content;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.form-signin {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin #title1{
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.form-signin .checkbox {
+  padding-top: 10px;
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-floating{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#email-id{
+  padding-left: 35px;
+}
+
+#name-id{
+  padding-left: 35px;
+}
+
+#address-id{
+  padding-left: 35px;
+}
+
+#password-id{
+  padding-left: 35px;
+}
+
+.form-float{
+  margin: 0;
+  padding-top: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
