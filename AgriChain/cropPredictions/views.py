@@ -315,9 +315,11 @@ def TwelveMonthsForecast(name):
     current_year = datetime.now().year
     current_rainfall = annual_rainfall[current_month - 1]
     name = name.lower()
+    print(name)
     commodity = crops_list[0]
     for i in crops_list:
-        if name == str(i):
+        x = i.getCropName()
+        if name == x.lower():
             commodity = i
             break
     month_with_year = []
@@ -375,7 +377,8 @@ def TwelveMonthPrevious(name):
     wpis = []
     crop_price = []
     for i in crops_list:
-        if name == str(i):
+        x = i.getCropName()
+        if name == x.lower():
             commodity = i
             break
     month_with_year = []
@@ -394,7 +397,7 @@ def TwelveMonthPrevious(name):
         x = datetime(y,m,1)
         x = x.strftime("%b %y")
         crop_price.append([x, round((wpis[i]* base[name.capitalize()]) / 100, 2)])
-    print("previous ", change)
+    print("previous ", wpis)
     new_crop_price =[]
     for i in range(len(crop_price)-1,-1,-1):
         new_crop_price.append(crop_price[i])
