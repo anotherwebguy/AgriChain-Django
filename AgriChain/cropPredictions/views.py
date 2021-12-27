@@ -404,12 +404,12 @@ def TwelveMonthPrevious(name):
     return new_crop_price
 
 
-def index(request):
+def cropPredict(request):
     # context = { 'top5': TopFiveWinners(),'bottom5': TopFiveLosers(), 'sixmonths': SixMonthsForecast()}
     print('-------------------------------------------=-rishika')
     print(SixMonthsForecast())
     # print(context['top5'][0][0])
-    return render(request,'cropPredict/index.html',{'top5': TopFiveWinners(),'bottom5': TopFiveLosers(), 'sixmonths': SixMonthsForecast()})
+    return render(request,'cropPredict/cropPredict.html',{'top5': TopFiveWinners(),'bottom5': TopFiveLosers(), 'sixmonths': SixMonthsForecast()})
 
 
 def crop_profile(request,name):

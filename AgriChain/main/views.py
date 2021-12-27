@@ -21,8 +21,8 @@ def signup(request):
 def login(request):
     return render(request,'main/signin.html')    
 
-def home(request):
-    return render(request,'main/index.html')
+def farmerhome(request):
+    return render(request,'main/farmer.html')
 
 def about(request):
     return render(request,'main/about.html')   
