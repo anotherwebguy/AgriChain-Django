@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white active bg-gradient-primary" href="{% url 'cropPredict' %}">
+                    <a class="nav-link text-white active bg-gradient-success" href="{% url 'cropPredict' %}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">table_view</i>
                         </div>
@@ -134,7 +134,7 @@
         </div>
         <div class="sidenav-footer position-absolute w-100 bottom-0 ">
             <div class="mx-3">
-                <a class="btn bg-gradient-primary mt-4 w-100"
+                <a class="btn bg-gradient-success mt-4 w-100"
                     href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree"
                     type="button">Upgrade to pro</a>
             </div>
@@ -294,7 +294,7 @@
                 <div class="col-12">
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                            <div class="bg-gradient-success shadow-success border-radius-lg pt-4 pb-3">
                                 <h6 class="text-white text-capitalize ps-3">Top Gainers(Current trends)</h6>
                             </div>
                         </div>
@@ -348,7 +348,7 @@
                 <div class="col-12">
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                            <div class="bg-gradient-success shadow-success border-radius-lg pt-4 pb-3">
                                 <h6 class="text-white text-capitalize ps-3">Top Losers(Current trends)</h6>
                             </div>
                         </div>
@@ -398,6 +398,421 @@
                     </div>
                 </div>
             </div>
+<style>
+#container10 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#card {
+  display: flex;
+  height: 140px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+#card1 {
+  display: flex;
+  height: 140px;
+  width: 200px;
+  background-color: #171411;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+#card:not(:first-child) {
+    margin-left: -50px;
+}
+#card1:not(:first-child) {
+    margin-left: -50px;
+}
+#card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+#card1:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+#card:hover ~ #card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+#card1:hover ~ #card1 {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+#title {
+  color: white;
+  font-weight: 100px;
+  position: relative;
+  left: 40px;
+  top: 110px;
+  font-size: 20px;
+}
+#bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+#emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+#circle {
+  position: absolute;
+  top: 25px;
+  left: 65px;
+}
+#filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+  transition: 0.6s ease-out;
+}
+#card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+#card1:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+#stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+#card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+#card1:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+</style>
+<h3>Explore By Commodity</h3>
+<br>
+<div id="container10">
+<div class="row" style="margin-bottom: 25px;">      
+        
+                <div id="card">
+                    <a href="http://localhost:8000/cropPredict/crops/paddy" style="color: #000000">
+                            <div id="circle">
+                              <img src="https://img.icons8.com/color/48/000000/rice-bowl.png">
+                            </div>
+                            <h3 id="title"><span class="title">Paddy</span></h3> 
+                         </a>
+                    <div id="bar">   
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>  
+                    </div>
+                  </div>
+                <div id="card">
+                    <a href="http://localhost:8000/cropPredict/crops/wheat" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/wheat.png">
+                        </div>
+                        <h3 id="title"><span class="title">Wheat</span></h3> 
+                     </a>  
+                  <div id="bar">
+                    <div id="emptybar"></div>
+                    <div id="filledbar"></div>
+                  </div>
+                </div>
+                <div id="card">
+                    <a href="http://localhost:8000/cropPredict/crops/barley" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/barley.png">
+                        </div>
+                        <h3 id="title"><span class="title">Barley</span></h3> 
+                     </a>  
+                  <div id="bar">
+                    <div id="emptybar"></div>
+                    <div id="filledbar"></div>
+                  </div>  
+                </div>
+                <div id="card">
+                    <a href="http://localhost:8000/cropPredict/crops/soyabean" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/soy.png">
+                        </div>
+                        <h3 id="title"><span class="title">Soyabean</span></h3> 
+                     </a>
+                  <div id="bar">
+                    <div id="emptybar"></div>
+                    <div id="filledbar"></div>
+                  </div> 
+                </div>
+                <div id="card">
+                    <a href="http://localhost:8000/cropPredict/crops/copra" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/coconut.png">
+                        </div>
+                        <h3 id="title"><span class="title">Coconut</span></h3> 
+                     </a>
+                    <div id="bar">
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>
+                    </div>
+                  </div>
+                  <div id="card">
+                    <a href="http://localhost:8000/cropPredict/crops/sunflower" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/potato.png">
+                        </div>
+                        <h3 id="title"><span class="title">Sunflower</span></h3> 
+                     </a>  
+                  <div id="bar">
+                    <div id="emptybar"></div>
+                    <div id="filledbar"></div>
+                  </div>
+                  
+                </div>
+              </div>
+
+<div class="row" style="margin-bottom: 25px;">     
+           
+                <div id="card1">
+                    <a href="http://localhost:8000/cropPredict/crops/bajra" style="color: #000000">
+                            <div id="circle">
+                              <img src="https://img.icons8.com/color/48/000000/potato.png">
+                            </div>
+                            <h3 id="title"><span class="title">Bajra</span></h3>
+                         </a>
+                    <div id="bar">   
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>  
+                    </div>
+                  </div>
+                <div id="card1">
+                    <a href="http://localhost:8000/cropPredict/crops/rape" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                        </div>
+                        <h3 id="title"><span class="title">Mustard</span></h3> 
+                     </a>  
+                  <div id="bar">
+                    <div id="emptybar"></div>
+                    <div id="filledbar"></div>
+                  </div>
+                </div>
+                <div id="card1">
+                    <a href="http://localhost:8000/cropPredict/crops/urad" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                        </div>
+                        <h3 id="title"><span class="title">Cotton</span></h3> 
+                     </a>
+                    <div id="bar">
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>
+                    </div>
+                  </div>
+                  <div id="card1">
+                    <a href="http://localhost:8000/cropPredict/crops/ragi" style="color: #000000">
+                            <div id="circle">
+                              <img src="https://img.icons8.com/office/48/000000/wheat.png">
+                            </div>
+                            <h3 id="title"><span class="title">Ragi</span></h3>
+                         </a>
+                    <div id="bar">   
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>  
+                    </div>
+                  </div>
+                <div id="card1">
+                    <a href="http://localhost:8000/cropPredict/crops/arhar" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                        </div>
+                        <h3 id="title"><span class="title">Arhar</span></h3> 
+                     </a>
+                    <div id="bar">
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>
+                    </div>
+                  </div>
+                  <div id="card1">
+                    <a href="http://localhost:8000/cropPredict/crops/groundnut" style="color: #000000">
+                        <div id="circle">
+                          <img src="https://img.icons8.com/color/48/000000/peanuts.png">
+                        </div>
+                        <h3 id="title"><span class="title">Groundnut</span></h3> 
+                     </a>
+                    <div id="bar">
+                      <div id="emptybar"></div>
+                      <div id="filledbar"></div>
+                    </div>
+                  </div>
+              </div>
+
+<div class="row" style="margin-bottom: 25px;">    
+    
+        <div id="card">
+            <a href="http://localhost:8000/cropPredict/crops/gram" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                </div>
+                <h3 id="title"><span class="title">Gram</span></h3> 
+             </a>
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div> 
+        </div>
+        <div id="card">
+            <a href="http://localhost:8000/cropPredict/crops/maize" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/corn.png">
+                </div>
+                <h3 id="title"><span class="title">Maize</span></h3> 
+             </a>  
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div>
+        </div>
+        <div id="card">
+            <a href="http://localhost:8000/cropPredict/crops/moong" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                </div>
+                <h3 id="title"><span class="title">Moong</span></h3> 
+             </a>  
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div>
+          
+        </div>
+        <div id="card">
+            <a href="http://localhost:8000/cropPredict/crops/masoor" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                </div>
+                <h3 id="title"><span class="title">Masoor</span></h3> 
+             </a>
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div> 
+        </div>
+        <div id="card">
+            <a href="http://localhost:8000/cropPredict/crops/urad" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                </div>
+                <h3 id="title"><span class="title">Urad</span></h3> 
+             </a>
+            <div id="bar">
+              <div id="emptybar"></div>
+              <div id="filledbar"></div>
+            </div>
+          </div>
+          <div id="card">
+            <a href="http://localhost:8000/cropPredict/crops/safflower" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                </div>
+                <h3 id="title"><span class="title">Safflower</span></h3> 
+             </a>  
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div>
+        </div>
+      </div>
+<div class="row" style="margin-bottom: 25px;">    
+        <div id="card1">
+            <a href="http://localhost:8000/cropPredict/crops/sugarcane" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/bamboo.png">
+                </div>
+                <h3 id="title"><span class="title">Sugarcane</span></h3> 
+             </a>
+            <div id="bar">
+              <div id="emptybar"></div>
+              <div id="filledbar"></div>
+            </div>
+          </div>
+          <div id="card1">
+            <a href="http://localhost:8000/cropPredict/crops/jute" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/potato.png">
+                </div>
+                <h3 id="title"><span class="title">Raw Jute</span></h3> 
+             </a>
+            <div id="bar">
+              <div id="emptybar"></div>
+              <div id="filledbar"></div>
+            </div>
+          </div>
+
+
+          <div id="card1">
+            <a href="http://localhost:8000/cropPredict/crops/jowar" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/potato.png">
+                </div>
+                <h3 id="title"><span class="title">Jowar</span></h3> 
+             </a>
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div> 
+        </div>
+        <div id="card1">
+            <a href="http://localhost:8000/cropPredict/crops/niger" style="color: #000000">
+                    <div id="circle">
+                      <img src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png">
+                    </div>
+                    <h3 id="title"><span class="title">Niger</span></h3>
+                 </a>
+            <div id="bar">   
+              <div id="emptybar"></div>
+              <div id="filledbar"></div>  
+            </div>
+          </div>
+          <div id="card1">
+            <a href="http://localhost:8000/cropPredict/crops/sesamum" style="color: #000000">
+                <div id="circle">
+                  <img src="https://img.icons8.com/color/48/000000/sesame.png">
+                </div>
+                <h3 id="title"><span class="title">Sesamum</span></h3> 
+             </a>  
+          <div id="bar">
+            <div id="emptybar"></div>
+            <div id="filledbar"></div>
+          </div>  
+        </div>    
+</div>
+
+
+
+
+           
             <!-- idr tak -->
         </div>
     </main>
