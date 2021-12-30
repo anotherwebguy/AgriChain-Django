@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('cropPredict/',include('cropPredictions.urls')),
-
+    path('recommend/',include('recommendations.urls')),
 ]
