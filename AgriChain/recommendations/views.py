@@ -59,7 +59,9 @@ def crop_prediction(input_data):
             crop_knn_pipeline.predict(input_data)[0]
         ],max(crop_knn_pipeline.predict_proba(input_data)[0])
         * 100)
-
+    print(crop_label_dict[
+            crop_knn_pipeline.predict(input_data)[0]
+        ])
     return prediction_data
 
 
