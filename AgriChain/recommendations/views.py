@@ -116,3 +116,6 @@ def result(request):
 
 def recommend(request):
     return render(request,'recommend/recommend.html')
+
+def result(request):
+    return render(request,'recommend/result.html')
