@@ -200,37 +200,38 @@
                         </div>
                         <hr class="dark horizontal my-0">
                         <div style="margin: 20px 35px 20px 35px;">
-                            <form role="form">
+                            <form role="form" action="{% url 'result' %}" method="POST" name="form">
+                                {% csrf_token %}
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Nitrogen in Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="N" name="N" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Phosphorous in Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="P" name="P" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Postassium in Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="K" name="K" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Temperature (in Celcius)</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="temperature" name="temperature" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Humidity (in %)</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="humidity" name="humidity" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">pH value of Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="ph" name="ph" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Rainfall (in mm)</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="rainfall" name="rainfall" class="form-control">
                                 </div>
                                 <div class="text-center">
-                                    <button type="button"
+                                    <button type="submit" name="broadcastCrop"
                                         class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0">Predict Crop</button>
                                 </div>
                             </form>
@@ -250,32 +251,33 @@
                         </div>
                         <hr class="dark horizontal my-0">
                         <div style="margin: 20px 35px 20px 35px;">
-                            <form role="form">
+                            <form role="form" action="{% url 'result' %}" method="POST" name="form">
+                                {% csrf_token %}
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Nitrogen in Soil</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="input-group input-group-outline mb-3">
-                                    <label class="form-label">Amount of Phosphorous in Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="Nitrogen" name="Nitrogen" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Postassium in Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="Potassium" name="Potassium" class="form-control">
+                                </div>
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Amount of Phosphorous in Soil</label>
+                                    <input type="text" id="Phosphorous" name="Phosphorous" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Temperature (in Celcius)</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="Temparature" name="Temparature" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Humidity (in %)</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="Humidity" name="Humidity" class="form-control">
                                 </div>
                                 <div class="input-group input-group-outline mb-3 ">
                                     <label class="form-label">Moisture in Soil</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="Moisture" name="Moisture" class="form-control">
                                 </div>
-                                <select class="form-select form-select-lg mb-3">
+                                <select id="soil_type" name="soil_type" class="form-select form-select-lg mb-3" >
                                     <option selected>Select Soil Type</option>
                                     <option value="1">Sandy</option>
                                     <option value="2">Loamy</option>
@@ -283,7 +285,7 @@
                                     <option value="4">Red</option>
                                     <option value="5">Clayey</option>
                                 </select>
-                                <select class="form-select form-select-lg mb-3 " >
+                                <select id="crop_type" name="crop_type" class="form-select form-select-lg mb-3 " >
                                     <option selected>Select Crop Type</option>
                                     <option value="1">Maize</option>
                                     <option value="2">Sugarcane</option>
@@ -298,7 +300,7 @@
                                     <option value="11">Ground Nuts</option>
                                 </select>
                                 <div class="text-center">
-                                    <button type="button"
+                                    <button type="submit" name="broadcastFertilizer"
                                         class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0">Predict
                                         Fertilizer</button>
                                 </div>
