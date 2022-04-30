@@ -18,9 +18,9 @@ crop_label_dict = pickle.load(
 
 
 # Loading all Fertilizer Recommendation Models
-# fertilizer_xgb_pipeline = pickle.load(
-#     open("media/models/fertilizer_recommendation/xgb_pipeline.pkl", "rb")
-# )
+fertilizer_xgb_pipeline = pickle.load(
+    open("media/models/fertilizer_recommendation/xgb_pipeline.pkl", "rb")
+)
 fertilizer_rf_pipeline = pickle.load(
     open("media/models/fertilizer_recommendation/rf_pipeline.pkl", "rb")
 )
@@ -82,15 +82,16 @@ def result(request):
     resultdata = []
     if request.method == 'POST':
         if "broadcastCrop" in request.POST:
-            form_values = reques.POST.dict()
+            form_values = request.POST.dict()
             column_names = ["N", "P", "K", "temperature", "humidity", "ph", "rainfall"]
             input_data = np.asarray([float(form_values[i].strip()) for i in column_names]).reshape(
                 1, -1
             )
+            print(input_data)
             predictiondata = crop_prediction(input_data)
             resultdata = data.crop(predictiondata[0][0])
         if "broadcastFertilizer" in request.POST:
-            form_values = reques.POST.dict()
+            form_values = request.POST.dict()
             column_names = [
                 "Temparature",
                 "Humidity",
