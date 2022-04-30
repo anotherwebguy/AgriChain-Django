@@ -200,7 +200,7 @@
                         </div>
                         <hr class="dark horizontal my-0">
                         <div style="margin: 20px 35px 20px 35px;">
-                            <form role="form" action="{% url 'result' %}" method="POST" name="form">
+                            <form role="form" action="{% url 'recommendationResult' %}" method="POST" name="form">
                                 {% csrf_token %}
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Nitrogen in Soil</label>
@@ -231,7 +231,7 @@
                                     <input type="text" id="rainfall" name="rainfall" class="form-control">
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" name="broadcastCrop"
+                                    <button type="submit" name="broadcastCrop" 
                                         class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0">Predict Crop</button>
                                     </a>
                                 </div>
@@ -252,7 +252,7 @@
                         </div>
                         <hr class="dark horizontal my-0">
                         <div style="margin: 20px 35px 20px 35px;">
-                            <form role="form" action="{% url 'result' %}" method="POST" name="form">
+                            <form role="form" action="{% url 'recommendationResult' %}" method="POST" name="form">
                                 {% csrf_token %}
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Amount of Nitrogen in Soil</label>
@@ -280,28 +280,28 @@
                                 </div>
                                 <select id="soil_type" name="soil_type" class="form-select form-select-lg mb-3" >
                                     <option selected>Select Soil Type</option>
-                                    <option value="1">Sandy</option>
-                                    <option value="2">Loamy</option>
-                                    <option value="3">Black</option>
-                                    <option value="4">Red</option>
-                                    <option value="5">Clayey</option>
+                                    <option value="Sandy">Sandy</option>
+                                    <option value="Loamy">Loamy</option>
+                                    <option value="Black">Black</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Clayey">Clayey</option>
                                 </select>
                                 <select id="crop_type" name="crop_type" class="form-select form-select-lg mb-3 " >
                                     <option selected>Select Crop Type</option>
-                                    <option value="1">Maize</option>
-                                    <option value="2">Sugarcane</option>
-                                    <option value="3">Cotton</option>
-                                    <option value="4">Tobacco</option>
-                                    <option value="5">Paddy</option>
-                                    <option value="6">Barley</option>
-                                    <option value="7">Wheat</option>
-                                    <option value="8">Millets</option>
-                                    <option value="9">Oil seeds</option>
-                                    <option value="10">Pulses</option>
-                                    <option value="11">Ground Nuts</option>
+                                    <option value="Maize">Maize</option>
+                                    <option value="Sugarcane">Sugarcane</option>
+                                    <option value="Cotton">Cotton</option>
+                                    <option value="Tobacco">Tobacco</option>
+                                    <option value="Paddy">Paddy</option>
+                                    <option value="Barley">Barley</option>
+                                    <option value="Wheat">Wheat</option>
+                                    <option value="Millets">Millets</option>
+                                    <option value="Oil seeds">Oil seeds</option>
+                                    <option value="Pulses">Pulses</option>
+                                    <option value="Ground Nuts">Ground Nuts</option>
                                 </select>
                                 <div class="text-center">
-                                    <button type="submit" name="broadcastFertilizer"
+                                    <button type="submit" name="broadcastFertilizer" 
                                         class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0">Predict
                                         Fertilizer</button>
                                     </a>

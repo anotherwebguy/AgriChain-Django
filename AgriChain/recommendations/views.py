@@ -55,10 +55,10 @@ def convert(o):
 
 def crop_prediction(input_data):
     prediction_data = []
-    prediction_data.append(crop_label_dict[
+    prediction_data.append((crop_label_dict[
             crop_knn_pipeline.predict(input_data)[0]
         ],max(crop_knn_pipeline.predict_proba(input_data)[0])
-        * 100)
+        * 100))
     print(crop_label_dict[
             crop_knn_pipeline.predict(input_data)[0]
         ])
@@ -67,19 +67,20 @@ def crop_prediction(input_data):
 
 def fertilizer_prediction(input_data):
     prediction_data = []
-    prediction_data.append(fertilizer_label_dict[
+    prediction_data.append((fertilizer_label_dict[
             fertilizer_rf_pipeline.predict(input_data)[0]
         ],max(fertilizer_rf_pipeline.predict_proba(input_data)[0])
-        * 100)
+        * 100))
 
     return prediction_data
     
 
 # Create your views here.
 
-def result(request):
+def recommendationResult(request):
     predictiondata = []
     resultdata = []
+    print(request.POST)
     if request.method == 'POST':
         if "broadcastCrop" in request.POST:
             form_values = request.POST.dict()
