@@ -9,13 +9,12 @@ from . import data
 
 # Loading all Crop Recommendation Models
 
-crop_knn_pipeline = pickle.load(
-    open("media/models/crop_recommendation/knn_pipeline.pkl", "rb")
-)
 crop_label_dict = pickle.load(
-    open("media/models/crop_recommendation/label_dictionary.pkl", "rb")
+    open("media/models/label_dictionary.pkl", "rb")
 )
-
+crop_knn_pipeline = pickle.load(
+    open("media/models/knn_pipeline.pkl", "rb")
+)
 
 # Loading all Fertilizer Recommendation Models
 fertilizer_xgb_pipeline = pickle.load(

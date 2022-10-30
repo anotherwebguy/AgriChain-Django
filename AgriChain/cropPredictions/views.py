@@ -102,6 +102,32 @@ base = {
     "Wheat": 1350
 }
 
+# base = {
+#     "Paddy": 2624.5,
+#     "Arhar": 10320.51,
+#     "Bajra": 2451.21,
+#     "Barley": 2635.53,
+#     "Copra": 13358.58,
+#     "Cotton": 8630,
+#     "Sesamum": 13582.08,
+#     "Gram": 6564.92,
+#     "Groundnut": 5178.19,
+#     "Jowar": 3140.31,
+#     "Maize": 2163.09,
+#     "Masoor": 7709.71,
+#     "Moong": 10228.02,
+#     "Niger": 6533.55,
+#     "Ragi": 2882.04,
+#     "Rape": 6972.18,
+#     "Jute": 5679.52,
+#     "Safflower": 5200.36,
+#     "Soyabean": 4751.67,
+#     "Sugarcane": 400,
+#     "Sunflower": 5287.18,
+#     "Urad": 10659.73,
+#     "Wheat": 2479.39
+# }
+
 
 crops_list = []
 arhar = Crop(crops_dict["arhar"])
@@ -177,7 +203,7 @@ def TopFiveWinners():
         name = crops_list[i].getCropName()
         print('first')
         print(name)
-        to_send.append([name, round((current_month_prediction[i] * base[name]) / 100, 2), round(perc, 2)])
+        to_send.append([name, round(((current_month_prediction[i]) * base[name]) / 100, 2), round(perc, 2)])
     print(to_send)
     return to_send
 
@@ -206,8 +232,9 @@ def TopFiveLosers():
         name = crops_list[i].getCropName()
         print('first')
         print(name)
-        to_send.append([name, round((current_month_prediction[i] * base[name]) / 100, 2), round(perc, 2)])
+        to_send.append([name, round(((current_month_prediction[i]) * base[name]) / 100, 2), round(perc, 2)])
     print(to_send)
+    # to_send.pop(0)
     return to_send    
 
 
@@ -245,7 +272,7 @@ def SixMonthsForecastHelper(name):
         m, y, r = month_with_year[i]
         x = datetime(y, m, 1)
         x = x.strftime("%b %y")
-        crop_price.append([x, round((wpis[i]* base[name.capitalize()]) / 100, 2) , round(change[i], 2)])
+        crop_price.append([x, round(((wpis[i])* base[name.capitalize()]) / 100, 2) , round(change[i], 2)])
     
     return crop_price
 
@@ -306,7 +333,7 @@ def CurrentMonth(name):
             commodity = i
             break
     current_wpi = commodity.getPredictedValue([float(current_month), current_year, current_rainfall])
-    current_price = (base[name.capitalize()]*current_wpi)/100
+    current_price = (base[name.capitalize()]*(current_wpi))/100
     return current_price
 
 
@@ -338,6 +365,7 @@ def TwelveMonthsForecast(name):
 
     for m, y, r in month_with_year:
         current_predict = commodity.getPredictedValue([float(m), y, r])
+        previous_predict = commodity.getPredictedValue([float(m-1), y, r-1])
         if current_predict > max_value:
             max_value = current_predict
             max_index = month_with_year.index((m, y, r))
@@ -345,18 +373,18 @@ def TwelveMonthsForecast(name):
             min_value = current_predict
             min_index = month_with_year.index((m, y, r))
         wpis.append(current_predict)
-        change.append(((current_predict - current_wpi) * 100) / current_wpi)
+        change.append(((current_predict - previous_predict) * 100) / previous_predict)
 
     max_month, max_year, r1 = month_with_year[max_index]
     min_month, min_year, r2 = month_with_year[min_index]
-    min_value = min_value * base[name.capitalize()] / 100
-    max_value = max_value * base[name.capitalize()] / 100
+    min_value = (min_value) * base[name.capitalize()] / 100
+    max_value = (max_value) * base[name.capitalize()] / 100
     crop_price = []
     for i in range(0, len(wpis)):
         m, y, r = month_with_year[i]
         x = datetime(y, m, 1)
         x = x.strftime("%b %y")
-        crop_price.append([x, round((wpis[i]* base[name.capitalize()]) / 100, 2) , round(change[i], 2)])
+        crop_price.append([x, round(((wpis[i])* base[name.capitalize()]) / 100, 2) , round(change[i], 2)])
     print("forecast", change)
     x = datetime(max_year,max_month,1)
     x = x.strftime("%b %y")
@@ -396,7 +424,7 @@ def TwelveMonthPrevious(name):
         m, y, r = month_with_year[i]
         x = datetime(y,m,1)
         x = x.strftime("%b %y")
-        crop_price.append([x, round((wpis[i]* base[name.capitalize()]) / 100, 2)])
+        crop_price.append([x, round(((wpis[i])* base[name.capitalize()]) / 100, 2)])
     print("previous ", wpis)
     new_crop_price =[]
     for i in range(len(crop_price)-1,-1,-1):
